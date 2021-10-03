@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+//* Packages
+import { ThemeProvider } from "styled-components";
+
+//* Components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import {
+  Hero,
+  Statistics,
+  GrowTogether,
+  FlowConversations,
+  YourUsers,
+  BuildCommunities,
+} from "./components/sections";
+
+//* Style
+import GlobalStyles from "./components/styles/Global";
+
+const theme = {
+  colors: {
+    header: "#fff",
+    body: "#fff",
+    footer: "#003333",
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <Header />
+        <Hero />
+        <Statistics />
+        <GrowTogether />
+        <FlowConversations />
+        <YourUsers />
+        <BuildCommunities />
+        <Footer />
+      </>
+    </ThemeProvider>
   );
 }
 
